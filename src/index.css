@@ -5,9 +5,203 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-image: url('https://img.freepik.com/premium-photo/business-handshake-finance-prosperity-money-technology-asset-background_31965-43781.jpg?w=1060');
+  background-repeat: no-repeat; 
+  background-size: cover;
+  
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+/* navbar */
+.logo{
+ width: 4rem; 
+}
+
+
+.homepageimage{
+  height: 25rem;  
+  width: 25rem;
+ }
+
+.image_text{
+  color: #f2f2f2; 
+  background: #77a9f3; 
+  font-size: 38px; 
+  line-height: 50px; 
+  font-weight: 700; 
+  margin: 0 5px 24px; 
+  float: left; 
+  padding: 10px; 
+  margin: 2px 5px 24px; 
+  -webkit-box-shadow: -19px -10px 40px 20px rgba(0,0,0,0.88);
+  -moz-box-shadow: -19px -10px 40px 20px rgba(0,0,0,0.88);
+  box-shadow: -19px -10px 40px 20px rgba(0,0,0,0.88);
+  -webkit-border-radius: 10px;
+-webkit-border-top-left-radius: 200px;
+-webkit-border-bottom-right-radius: 200px;
+-moz-border-radius: 10px;
+-moz-border-radius-topleft: 250px;
+-moz-border-radius-bottomright: 250px;
+border-radius: 10px;
+border-top-left-radius: 230px;
+border-bottom-right-radius: 230px;
+}
+
+.register_text{
+  background-color: white;
+  -webkit-box-shadow: -6px 8px 75px -3px rgba(67,73,247,1);
+-moz-box-shadow: -6px 8px 75px -3px rgba(67,73,247,1);
+box-shadow: -6px 8px 75px -3px rgba(67,73,247,1);
+}
+
+
+.wrap {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button {
+  min-width: 300px;
+  min-height: 60px;
+  font-size: 18px;
+  text-transform: uppercase;
+  letter-spacing: 1.3px;
+  font-weight: 700;
+  color: #313133;
+  background: #4b7fcc;
+  background: linear-gradient(90deg, rgb(129, 198, 230) 0%, rgb(81, 79, 209) 100%);
+  border: none;
+  border-radius: 1000px;
+  box-shadow: 12px 12px 24px rgba(79,209,197,.64);
+  transition: all 0.3s ease-in-out 0s;
+  cursor: pointer;
+  outline: none;
+  position: relative;
+  padding: 10px;
+  }
+
+
+
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  color: white;
+  text-align: center;
+}
+
+
+/*! About Me */
+
+.about_me{
+  margin: 0;
+  padding: 0;
+  background-image: url('https://png.pngtree.com/thumb_back/fh260/background/20201026/pngtree-futuristic-shape-abstract-background-chemistry-technology-concept-for-website-image_438818.jpg');
+  
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  min-height: 90vh;
+
+}
+
+.profil_image{
+  width: 25rem;
+  height: 25rem;
+  border: solid 5px white;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+
+}
+.text_content{
+  
+  border: solid 5px white;
+  box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+  
+}
+
+/* welcomePage */
+.form-control{
+  background-color: #b1caee;
+  color: white;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.card-body{
+  background-color: #b1caee;
+  color: white;
+
+}
+
+
+/* sidebar */
+nav ul {
+	list-style-type: none;
+	padding: 0;
+}
+
+nav ul li {
+	font-size: 50px;
+	background-color: white;
+	border: 1px solid #77a9f3;
+  border-radius: 1rem;
+	letter-spacing: 0.1em;
+	width: 8em;
+	height: 1.5em;
+	line-height: 1.5em;
+	position: relative;
+	overflow: hidden;
+	margin: 0.5em;
+	cursor: pointer;
+}
+
+nav ul li span {
+  color: white;
+	mix-blend-mode: difference;
+}
+
+nav ul li::before {
+	content: '';
+	position: absolute;
+	width: 2.5em;
+	height: inherit;
+	background-color: #77a9f3;
+	border-radius: 50%;
+	top: 0;
+	left: -0.75em;
+	transition: 0.5s ease-out;
+}
+
+nav ul li:hover::before {
+	transform: scale(7);
+}
+
+
+/* UPDATEFORM */
+
+.update_form{
+width: 25rem;
+height: 35px;
+margin-top: 3px;
+margin-bottom: 3px;
+background-color: #b1caee;
+color: white;
+font-weight: bold;
+border: none;
+border-radius: 10px;
+
+}
+
+.update_label{
+  font-size: large;
+  font-weight: bold;
 }
