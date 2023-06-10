@@ -37,7 +37,7 @@ function HausWork() {
             
               <button
                 type="button"
-                class="border-0 "
+                class="border-0 w-50 "
                 value="cleaner"
                 onClick={(e) => handleButtonClick(e.target.value)}
               >
