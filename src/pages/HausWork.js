@@ -1,5 +1,5 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import React, {  useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import userService from "../services/userService";
 import "bootstrap-icons/font/bootstrap-icons.css";
 
@@ -31,51 +31,50 @@ function HausWork() {
   };
   return (
     <div className="row">
-      <div className="col-4">
-        <nav className="sidebar mt-5">
-          <ul>
-            
+      <div className="col-lg-4">
+        <nav className="sidebar mt-5 ms-5">
+          <div>
+            <div>
               <button
                 type="button"
-                class="border-0 w-50 "
+                class="selected_button m-2"
                 value="cleaner"
                 onClick={(e) => handleButtonClick(e.target.value)}
               >
                 Cleaner
               </button>
-            
-
-            <li>
+            </div>
+            <div>
               <button
                 type="button"
-                class="border-0 bg-transparent w-100"
+                class="selected_button m-2"
                 value="electrician"
                 onClick={(e) => handleButtonClick(e.target.value)}
               >
                 Electrician
               </button>
-            </li>
-            <li>
+            </div>
+            <div>
               <button
                 type="button"
-                class="border-0 bg-transparent w-100"
+                class="selected_button m-2"
                 value="painter"
                 onClick={(e) => handleButtonClick(e.target.value)}
               >
                 Painter
               </button>
-            </li>
-            <li>
+            </div>
+            <div>
               <button
                 type="button"
-                class="border-0 bg-transparent w-100"
+                class="selected_button m-2"
                 value="waterman"
                 onClick={(e) => handleButtonClick(e.target.value)}
               >
                 Waterman
               </button>
-            </li>
-          </ul>
+            </div>
+          </div>
         </nav>
       </div>
       <div className="col-8 d-flex flex-wrap justify-content-center">

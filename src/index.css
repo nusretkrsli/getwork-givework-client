@@ -144,45 +144,52 @@ box-shadow: -6px 8px 75px -3px rgba(67,73,247,1);
 
 
 /* sidebar */
-nav ul {
-	list-style-type: none;
-	padding: 0;
+
+
+/* CSS */
+.selected_button {
+  width: 18rem;
+  appearance: none;
+  background-color: #FFFFFF;
+  border-radius: 40em;
+  border-style: none;
+  box-shadow: #ADCFFF 0 -12px 6px inset;
+  box-sizing: border-box;
+  color: #000000;
+  cursor: pointer;
+  display: inline-block;
+  font-family: -apple-system,sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: -.24px;
+  margin: 0;
+  outline: none;
+  padding: 1rem 1.3rem;
+  quotes: auto;
+  text-align: center;
+  text-decoration: none;
+  transition: all .15s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
 }
 
-nav ul li {
-	font-size: 50px;
-	background-color: white;
-	border: 1px solid #77a9f3;
-  border-radius: 1rem;
-	letter-spacing: 0.1em;
-	width: 8em;
-	height: 1.5em;
-	line-height: 1.5em;
-	position: relative;
-	overflow: hidden;
-	margin: 0.5em;
-	cursor: pointer;
-}
-
-nav ul li span {
+.selected_button:hover {
+  background-color: #0D6EFD;
+  box-shadow: #0D6EFD 0 -6px 8px inset;
+  transform: scale(1.125);
   color: white;
-	mix-blend-mode: difference;
 }
 
-nav ul li::before {
-	content: '';
-	position: absolute;
-	width: 2.5em;
-	height: inherit;
-	background-color: #77a9f3;
-	border-radius: 50%;
-	top: 0;
-	left: -0.75em;
-	transition: 0.5s ease-out;
+.selected_button:active {
+  transform: scale(1.025);
 }
 
-nav ul li:hover::before {
-	transform: scale(7);
+@media (min-width: 768px) {
+  .selected_button {
+    font-size: 1.5rem;
+    padding: .75rem 2rem;
+  }
 }
 
 
