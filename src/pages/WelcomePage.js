@@ -125,7 +125,7 @@ export default function WelcomePage() {
                         type="tel"
                         name="phoneNumber"
                         className="form-control"
-                        maxLength={10}
+                        maxLength={12}
                       />
                       <ErrorMessage
                         name="phoneNumber"

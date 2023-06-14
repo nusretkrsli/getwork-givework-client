@@ -34,7 +34,8 @@ const UpdateForm = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const updatePerson = async () => {
+  const updatePerson = async (pEvent) => {
+    pEvent.preventDefault();
     const updatedUser = {
       firstName: currentUser.firstName,
       lastName: currentUser.lastName,
@@ -46,9 +47,9 @@ const UpdateForm = () => {
     try {
       const response = await api.put(
         `/dashboard/dashboard?email=${user.email}`,
-        { updatedUser }
+        updatedUser
       );
-
+      setCurrentUser({ ...currentUser });
       return response.data;
     } catch (error) {
       console.error(error);
@@ -62,6 +63,8 @@ const UpdateForm = () => {
       [e.target.name]: e.target.value,
     });
   };
+
+
   return (
     <form>
       <label className="update_label">
@@ -71,7 +74,7 @@ const UpdateForm = () => {
           className="update_form"
           type="text"
           name="firstName"
-          value={currentUser.firstName}
+          value={currentUser?.firstName}
           onChange={handleChange}
         />
       </label>
@@ -123,7 +126,7 @@ const UpdateForm = () => {
           className="update_form"
           type="tel"
           name="phoneNumber"
-          maxLength={10}
+          maxLength={12}
           value={currentUser?.phoneNumber}
           onChange={handleChange}
         />
@@ -137,7 +140,7 @@ const UpdateForm = () => {
           className="update_form"
           type="text"
           name="role"
-          value={currentUser.role}
+          value={currentUser?.role}
           onChange={handleChange}
         />
       </label>

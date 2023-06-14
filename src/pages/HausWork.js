@@ -2,8 +2,10 @@
 import React, { useEffect, useState } from "react";
 import userService from "../services/userService";
 import "bootstrap-icons/font/bootstrap-icons.css";
+//import { useNavigate } from "react-router-dom";
 
 function HausWork() {
+  //let navigate = useNavigate();
   const [workers, setWorkers] = useState([]);
 
   const getAllUsers = async () => {
@@ -29,9 +31,14 @@ function HausWork() {
       throw error;
     }
   };
+
+  const handleClickChat = (pNumber) => {
+    const whatsappUrl = `https://api.whatsapp.com/send?phone=${encodeURIComponent(pNumber)}`;
+    window.location.href = whatsappUrl;
+  };
   return (
-    <div className="row">
-      <div className="col-lg-4">
+    <div className="row justify-content-center">
+      <div className="col-lg-2 ">
         <nav className="sidebar mt-5 ms-5">
           <div>
             <div>
@@ -77,9 +84,9 @@ function HausWork() {
           </div>
         </nav>
       </div>
-      <div className="col-8 d-flex flex-wrap justify-content-center">
+      <div className="col-9 d-flex flex-wrap justify-content-center">
         {workers?.map((worker) => (
-          <div className="card bg-white text-white p-0 mt-5 ms-5 col-lg-3 ">
+          <div className="card profil-card bg-white text-white p-0 mt-5 ms-4 col-lg-3 ">
             <div className="text-center m-3">
               {/* Resim ekleme yapilacak */}
               <img
@@ -106,8 +113,8 @@ function HausWork() {
               <hr className="text-white"></hr>
               <div className="d-flex justify-content-between">
                 <div></div>
-                <button className="text-primary bg-transparent border-0 px-3 rounded-2 fs-1">
-                  <i class="bi bi-chat-fill"></i>
+                <button onClick={()=>handleClickChat(worker.phoneNumber)} className="invisible-button">
+                <span id="boot-icon" class="bi bi-whatsapp" ></span>
                 </button>
               </div>
             </div>

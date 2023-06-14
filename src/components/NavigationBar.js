@@ -50,8 +50,8 @@ function NavigationBar() {
                     <Nav.Link as={NavLink} to="/dashboard">
                       Dashboard
                     </Nav.Link>
-                    <Nav.Link as={NavLink} to="/settings">
-                      Settings
+                    <Nav.Link as={NavLink} to="/chatpage">
+                      ChatPage
                     </Nav.Link>
                     <Nav.Link as={NavLink} to="/users">
                       UserManagement

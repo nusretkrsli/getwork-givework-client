@@ -30,14 +30,13 @@ function AboutUs() {
           <h2 className="text-white mt-2">What is getWork-giveWork?</h2>
           <p className="text-white fs-5 text-justify ">
             GetWork is a business application designed to help employers and job
-            seekers connect with one another more easily.The app also includes a
-            messaging feature that allows employers and job seekers to
-            communicate with one another directly. This helps to streamline the
-            hiring process and ensures that both parties are on the same page
-            throughout the application and interview process. Overall, GetWork
-            provides a convenient and effective solution for businesses looking
-            to find qualified job candidates and for job seekers looking for new
-            opportunities in their field.
+            seekers connect with each other more easily. The app also utilizes a
+            direct messaging feature that allows employers and job seekers to
+            communicate with each other through WhatsApp. This provides instant
+            access and facilitates immediate communication between the parties.
+            Overall, GetWork offers a convenient and effective solution for
+            individuals seeking to find qualified job candidates and for those
+            who are looking for new opportunities in their respective fields.
           </p>
         </div>
       </div>

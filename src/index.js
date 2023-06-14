@@ -11,8 +11,8 @@ import { Auth0Provider } from "@auth0/auth0-react";
 import Dashboard from "./pages/Dashboard"
 import ProtectedRoute from "./components/ProtectedRoute";
 import WelcomePage from "./pages/WelcomePage";
-import Settings from "./pages/Settings";
 import UserManagement from "./components/UserManagement";
+import ChatPage from "./pages/ChatPage";
 
 const router = createHashRouter([
   {
@@ -35,10 +35,10 @@ const router = createHashRouter([
           </ProtectedRoute>
       },
       {
-        path: "settings",
+        path: "chatpage",
         element: 
           <ProtectedRoute>
-            <Settings />
+            <ChatPage />
           </ProtectedRoute>
         
       },

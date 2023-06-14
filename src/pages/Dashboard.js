@@ -1,23 +1,37 @@
 /* eslint-disable react-hooks/rules-of-hooks */
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Container } from "react-bootstrap";
 import { UserContext } from "../contexts/UserContext";
 import { useAuth0 } from "@auth0/auth0-react";
 import UpdateForm from "../components/UpdateForm";
+import userService from "../services/userService";
 
 function Dashboard() {
-
-  const [isChecked, setIschecked] = useState(false)
+  const [isChecked, setIschecked] = useState(false);
+  const [member, setMember] = useState([]);
   const { logout } = useAuth0();
   const { user } = useContext(UserContext);
   if (!user) {
     return null;
   }
 
-  const handeleCheckBox =()=>{
-    setIschecked(!isChecked)
-  }
+  const getAllMember = async () => {
+    try {
+      const allMember = await userService.getUsers();
+      setMember(allMember);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  useEffect(() => {
+    getAllMember();
+  }, []);
 
+  const selectedMember = member.filter((person) => person.id === user.id);
+
+  const handeleCheckBox = () => {
+    setIschecked(!isChecked);
+  };
 
   const handleDelete = (id) => {
     fetch(`http://localhost:8000/api/v1/users/${id}`, {
@@ -39,10 +53,10 @@ function Dashboard() {
   return (
     <Container className="mb-5 d-flex justify-content-around">
       <div className="mt-5 ms-5 col-lg-3">
-       {isChecked ? <UpdateForm /> : "" } 
+        {isChecked ? <UpdateForm /> : ""}
       </div>
 
-      <div className="card bg-white text-white p-0 mt-5 ms-5 col-lg-3 ">
+      <div className="card profil-card bg-white text-white p-0 mt-5 ms-5 col-lg-3 ">
         <div className="text-center m-3">
           <img
             src={user?.picture}
@@ -53,15 +67,22 @@ function Dashboard() {
 
         <div className="card-body bg-primary">
           <p className="card-text">
-            Name: <b>{user?.name}</b>
+            Name:{" "}
+            <b>
+              {selectedMember[0]?.firstName} {selectedMember[0]?.lastName}
+            </b>
           </p>
           <hr className="text-white"></hr>
           <p className="card-text">
-            Email: <b>{user?.email}</b>
+            Email: <b>{selectedMember[0]?.email}</b>
           </p>
           <hr className="text-white"></hr>
           <p className="card-text">
-            Profession: <b>{user?.role}</b>
+            Phone: <b>{selectedMember[0]?.phoneNumber}</b>
+          </p>
+          <hr className="text-white"></hr>
+          <p className="card-text">
+            Profession: <b>{selectedMember[0]?.role}</b>
           </p>
           <hr className="text-white"></hr>
           <div className="d-flex justify-content-between">
@@ -72,8 +93,9 @@ function Dashboard() {
               <i className="bi bi-archive-fill"></i>
             </button>
             <button
-              
-              onClick={(e)=>{handeleCheckBox()}}
+              onClick={(e) => {
+                handeleCheckBox();
+              }}
               className="text-primary border-0 px-4 py-3 rounded-2"
             >
               <i className="bi bi-pencil-fill"></i>
