@@ -37,7 +37,7 @@ function NavigationBar() {
                   </>
                 ) : (
                   <>
-                    <ProtectedLink name="Create" link="/create" user={user}  roles={['admin','worker']}/>
+                    <ProtectedLink name="Home" link="/home" user={user}  roles={['admin','worker']}/>
                     <Nav.Link as={NavLink} to="/" exact>
                       Home
                     </Nav.Link>

@@ -11,7 +11,7 @@ function HausWork() {
   const getAllUsers = async () => {
     try {
       const userss = await userService.getUsers();
-      const workers = userss.filter((user) => user.role !== "user");
+      const workers = userss.filter((user) => user.role !== "user" && user.role !== "admin" );
       setWorkers(workers);
     } catch (error) {
       console.log(error);
@@ -90,7 +90,7 @@ function HausWork() {
             <div className="text-center m-3">
               {/* Resim ekleme yapilacak */}
               <img
-                src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png"
+                src="worker?.profilImage"
                 className=" w-50 card-img-top rounded-circle "
                 alt="Profile"
               />

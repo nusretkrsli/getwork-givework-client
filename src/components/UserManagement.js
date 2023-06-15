@@ -3,7 +3,7 @@ import userService from '../services/userService';
 
 export default function UserManagement() {
   const [users, setUsers] = useState([]);
-  const roles = ['admin', 'worker', 'user']
+  const roles = ['worker', 'admin', 'user']
 
   const getAllUsers = async () => {
     try {
