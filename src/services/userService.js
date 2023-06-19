@@ -32,21 +32,12 @@ const getUsers = async () => {
   }
 };
 
-const updateUserRoles = async (users) => {
-  try {
-    const response = await api.put(`/users`, users);
-    return response.data;
-  } catch (error) {
-    console.error(error);
-    throw error;
-  }
-};
+
 
 const userService = {
   getUser,
   saveUser,
   getUsers,
-  updateUserRoles
 };
 
 export default userService;

@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "bootstrap/dist/css/bootstrap.min.css";
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import App from "./App";
 import "./index.css";
 import { createHashRouter, RouterProvider } from "react-router-dom";
@@ -12,7 +13,8 @@ import Dashboard from "./pages/Dashboard"
 import ProtectedRoute from "./components/ProtectedRoute";
 import WelcomePage from "./pages/WelcomePage";
 import UserManagement from "./components/UserManagement";
-import ChatPage from "./pages/ChatPage";
+import Contact from "./pages/Contact";
+
 
 const router = createHashRouter([
   {
@@ -35,10 +37,10 @@ const router = createHashRouter([
           </ProtectedRoute>
       },
       {
-        path: "chatpage",
+        path: "contact",
         element: 
           <ProtectedRoute>
-            <ChatPage />
+            <Contact/>
           </ProtectedRoute>
         
       },
@@ -59,7 +61,7 @@ const router = createHashRouter([
         
       },
       {
-        path: "users",
+        path: "usermanagement",
         element: 
           <ProtectedRoute>
             <UserManagement />

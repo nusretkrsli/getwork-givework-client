@@ -7,10 +7,10 @@ function AboutUs() {
       <div className="row">
         <div class="col mt-3 ms-5">
           <div className="profil_image">
-            <img className="w-75" src="images/myprofil.png" alt="profil" />
+            <img className="w-100" src="images/myprofil.png" alt="profil" />
           </div>
         </div>
-        <div className="col text_content m-5 text-center">
+        <div className="col text_content m-3 mx-5 text-center">
           <h2 className="text-white">Who am I?</h2>
           <p className="text-white fs-5 text-justify">
             I am Nusret Karsli. I would like to begin by sharing my story. Three

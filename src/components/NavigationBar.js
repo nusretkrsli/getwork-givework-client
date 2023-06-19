@@ -1,16 +1,19 @@
-import { Nav, Navbar, Container } from "react-bootstrap";
-import { NavLink } from "react-router-dom";
-import "../index.css";
-import LoginButton from "./LoginButton";
-import LogoutButton from "./LogoutButton";
-import { useAuth0 } from "@auth0/auth0-react";
-import ProtectedLink from "./ProtectedLink";
-import { useContext } from "react";
-import { UserContext } from "../contexts/UserContext";
+import React from 'react';
+import { Nav, Navbar, Container } from 'react-bootstrap';
+import { NavLink } from 'react-router-dom';
+import '../index.css';
+import LoginButton from './LoginButton';
+import LogoutButton from './LogoutButton';
+import { useAuth0 } from '@auth0/auth0-react';
+import ProtectedLink from './ProtectedLink';
+import { useContext } from 'react';
+import { UserContext } from '../contexts/UserContext';
 
 function NavigationBar() {
   const { isAuthenticated, isLoading } = useAuth0();
   const user = useContext(UserContext);
+  console.log(user?.user?.role);
+
   return (
     <>
       <Navbar className="navbar" bg="primary" variant="dark" expand="lg">
@@ -37,7 +40,7 @@ function NavigationBar() {
                   </>
                 ) : (
                   <>
-                    <ProtectedLink name="Home" link="/home" user={user}  roles={['admin','worker']}/>
+                    <ProtectedLink name="Home" link="/home" user={user} roles={['admin', 'worker']} />
                     <Nav.Link as={NavLink} to="/" exact>
                       Home
                     </Nav.Link>
@@ -50,13 +53,14 @@ function NavigationBar() {
                     <Nav.Link as={NavLink} to="/dashboard">
                       Dashboard
                     </Nav.Link>
-                    <Nav.Link as={NavLink} to="/chatpage">
-                      ChatPage
+                    <Nav.Link as={NavLink} to="/contact">
+                      Contact
                     </Nav.Link>
-                    <Nav.Link as={NavLink} to="/users">
-                      UserManagement
-                    </Nav.Link>
-                    <ProtectedLink name="Users" link="/users" user={user}  roles={['admin']}/>
+                    {user?.user?.role === 'admin' && (
+                      <Nav.Link as={NavLink} to="/usermanagement">
+                        UserManagement
+                      </Nav.Link>
+                    )}
                   </>
                 )}
               </Nav>

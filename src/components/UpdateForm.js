@@ -2,6 +2,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { api } from "../services/httpService";
 import { UserContext } from "../contexts/UserContext";
+import Swal from "sweetalert2";
 
 const UpdateForm = () => {
   const [currentUser, setCurrentUser] = useState({
@@ -49,6 +50,7 @@ const UpdateForm = () => {
         `/dashboard/dashboard?email=${user.email}`,
         updatedUser
       );
+      Swal.fire("Your information has been changed!");
       setCurrentUser({ ...currentUser });
       return response.data;
     } catch (error) {
@@ -63,7 +65,6 @@ const UpdateForm = () => {
       [e.target.name]: e.target.value,
     });
   };
-
 
   return (
     <form>
@@ -145,7 +146,6 @@ const UpdateForm = () => {
         />
       </label>
       <br />
-
       <button
         type="submit"
         className="submit-btn mt-3 px-5 py-2 bg-primary rounded-3 border-0 text-white"

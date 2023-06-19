@@ -7,11 +7,10 @@ import UpdateForm from "../components/UpdateForm";
 import userService from "../services/userService";
 import { api } from "../services/httpService";
 
-
 function Dashboard() {
   const [isChecked, setIschecked] = useState(false);
   const [member, setMember] = useState([]);
-  const [userImage, setUserImage] = useState("");
+  const [userImage, setUserImage] = useState();
   const { logout } = useAuth0();
   const { user } = useContext(UserContext);
   if (!user) {
@@ -44,6 +43,7 @@ function Dashboard() {
       .then((response) => {
         if (response.ok) {
           console.log("It has been deleted successfully.");
+
           logout({ logoutParams: { returnTo: window.location.origin } });
         } else {
           throw new Error("An error occurred while deleting the record.");
@@ -63,6 +63,7 @@ function Dashboard() {
         `/dashboard/image?email=${selectedMember[0]?.email}`,
         formData
       );
+
       getUserImage();
       return response.data;
     } catch (error) {
@@ -74,7 +75,7 @@ function Dashboard() {
   const getUserImage = async () => {
     try {
       const response = await api.get(`/dashboard/image?email=${user?.email}`);
-      setUserImage(response?.data);
+      setUserImage();
       return response.data;
     } catch (error) {
       console.error(error);
@@ -87,40 +88,76 @@ function Dashboard() {
         {isChecked ? <UpdateForm /> : ""}
       </div>
 
-      
-
-      <div>
-        <label className="update_label">
-          Image:
-          <br />
-          <input
-            className="update_form"
-            type="file"
-            name="profileImage"
-            onChange={(e) => {
-              setUserImage(e.currentTarget.files[0]);
-            }}
-          />
-        </label>
-        <br />
-        <button
-          onClick={(e) => {
-            updateImage(e);
-          }}
-          className="text-primary border-0 px-4 py-3 rounded-2"
-        >
-          update Image
-        </button>
-      </div>
       <div className="card profil-card bg-white text-white p-0 mt-5 ms-5 col-lg-3 ">
-        <div className="text-center m-3">
-          <img
-            src={user.picture}
-            className=" w-50 card-img-top rounded-circle"
-            alt="Profile"
-          />
-        </div>
+        <div className="image-section text-center m-3">
+          <div style={{ position: "relative", display: "inline-block" }}>
+            <img
+              src={`http://localhost:8000/api/v1/dashboard/image?email=${user?.email}`}
+              className="w-50 card-img-top rounded-circle"
+              alt="Profile"
+            />
+            <div style={{ position: "absolute", right: 100, bottom: 33 }}>
+              <button
+                type="button"
+                className="image-button btn btn-primary text-primary bg-transparent border-0"
+                data-bs-toggle="modal"
+                data-bs-target="#exampleModal"
+              >
+                <i className="bi bi-plus-circle-fill me-1 mb-5 fs-4"></i>
+              </button>
+            </div>
 
+            <div
+              class="modal fade"
+              id="exampleModal"
+              tabindex="-1"
+              aria-labelledby="exampleModalLabel"
+              aria-hidden="true"
+            >
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">
+                      Modal title
+                    </h1>
+                    <button
+                      type="button"
+                      class="btn-close"
+                      data-bs-dismiss="modal"
+                      aria-label="Close"
+                    ></button>
+                  </div>
+                  <div class="modal-body">
+                    <div>
+                      <label className="update_label">
+                        Image:
+                        <br />
+                        <input
+                          className="update_form"
+                          type="file"
+                          name="profileImage"
+                          onChange={(e) => {
+                            setUserImage(e.currentTarget.files[0]);
+                          }}
+                        />
+                      </label>
+                      <br />
+                      <button
+                        onClick={(e) => {
+                          updateImage(e);
+                        }}
+                        className=" button text-primary border-0 px-2 py-1 rounded-2 text-white mt-5"
+                        data-bs-dismiss="modal"
+                      >
+                        update Image
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
         <div className="card-body bg-primary">
           <p className="card-text">
             Name:{" "}

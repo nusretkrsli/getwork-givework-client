@@ -2,10 +2,9 @@
 import React, { useEffect, useState } from "react";
 import userService from "../services/userService";
 import "bootstrap-icons/font/bootstrap-icons.css";
-//import { useNavigate } from "react-router-dom";
+
 
 function HausWork() {
-  //let navigate = useNavigate();
   const [workers, setWorkers] = useState([]);
 
   const getAllUsers = async () => {
@@ -90,7 +89,7 @@ function HausWork() {
             <div className="text-center m-3">
               {/* Resim ekleme yapilacak */}
               <img
-                src="worker?.profilImage"
+                src={`http://localhost:8000/api/v1/dashboard/image?email=${worker?.email}`}
                 className=" w-50 card-img-top rounded-circle "
                 alt="Profile"
               />
