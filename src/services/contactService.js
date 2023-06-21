@@ -1,8 +1,7 @@
 import { api } from "./httpService";
 
 
-const createMessage = async (newMessage, userId) => {
-
+export const createMessage = async (newMessage, userId) => {
   try {
     const postData = {
       ...newMessage,
@@ -10,12 +9,24 @@ const createMessage = async (newMessage, userId) => {
     };
     const response = await api.post("/contact", postData);
     return response.data;
-    
   } catch (error) {
     console.error(error);
     throw error;
   }
-  
 };
 
-export default createMessage;
+export const getMessages = async () => {
+  try {
+    const response = await api.get(`/contact`)
+    return response.data
+  } catch (error) {
+    console.error(error);
+    throw error;
+  }
+};
+
+ 
+  
+  
+
+

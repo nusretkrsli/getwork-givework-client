@@ -14,11 +14,12 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
-/* navbar */
+/*! navbar */
 .logo {
   width: 4rem;
 }
 
+/*! HomePage */
 .homepageimage {
   height: 25rem;
   width: 25rem;
@@ -85,7 +86,7 @@ code {
   position: relative;
   padding: 10px;
 }
-
+/*! Footer */
 .footer {
   position: fixed;
   left: 0;
@@ -226,22 +227,37 @@ code {
 /*! Contact*/
 
 svg {
-	height: 23rem;
-	margin-right: 4rem;
+  height: 23rem;
+  margin-right: 4rem;
 }
 
 #envelope {
   animation: float 2s ease-in-out infinite;
 }
 
-#star1, #star2, #star3, #star4, #star5, #star6 {
+#star1,
+#star2,
+#star3,
+#star4,
+#star5,
+#star6 {
   animation: blink 1s ease-in-out infinite;
 }
-#star2 { animation-delay: 100ms; }
-#star3 { animation-delay: 500ms; }
-#star4 { animation-delay: 700ms; }
-#star5 { animation-delay: 300ms; }
-#star6 { animation-delay: 200ms }
+#star2 {
+  animation-delay: 100ms;
+}
+#star3 {
+  animation-delay: 500ms;
+}
+#star4 {
+  animation-delay: 700ms;
+}
+#star5 {
+  animation-delay: 300ms;
+}
+#star6 {
+  animation-delay: 200ms;
+}
 
 @keyframes float {
   0% {
@@ -260,7 +276,7 @@ svg {
     opacity: 0;
   }
   50% {
-    opacity: .5;
+    opacity: 0.5;
   }
   100% {
     opacity: 1;
@@ -268,56 +284,56 @@ svg {
 }
 
 .container-contact {
-	height: 80vh;
+  height: 80vh;
 }
 
-Form{
-	min-width: 25rem;
-	
-	.title {
-		font-family: 'Pacifico', cursive;
-		color: #212529;
-		font-size: 2.5rem;
-	}
-	
+Form {
+  min-width: 25rem;
+
+  .title {
+    font-family: "Pacifico", cursive;
+    color: #212529;
+    font-size: 2.5rem;
+  }
+
   .form-group-contact {
     background-color: #f2f6f8;
-		border-radius: 2rem;
+    border-radius: 2rem;
     border: none;
     box-shadow: 0px 7px 5px rgba(0, 0, 0, 0.11);
-		
+
     &.thick {
       height: 3.3rem;
-      padding: .5rem 3.5rem;
+      padding: 0.5rem 3.5rem;
     }
-		
-		&:focus {
-			background-color: #f2f6f8;
-			border: none;
-			box-shadow: 0px 7px 5px rgba(0, 0, 0, 0.11);
-		}
+
+    &:focus {
+      background-color: #f2f6f8;
+      border: none;
+      box-shadow: 0px 7px 5px rgba(0, 0, 0, 0.11);
+    }
   }
-	
-	.message .form-control {
-			padding: .5rem 1.8rem;
-	}
-	
+
+  .message .form-control {
+    padding: 0.5rem 1.8rem;
+  }
+
   ::placeholder {
-    font-family: 'Quicksand', sans-serif;
-		font-weight: 600;
+    font-family: "Quicksand", sans-serif;
+    font-weight: 600;
     font-size: 1.1rem;
     color: #838788;
     position: relative;
     left: 0;
   }
-	
+
   Field,
   textarea {
-		font-family: 'Quicksand', sans-serif;
+    font-family: "Quicksand", sans-serif;
     color: #212529;
     font-size: 1.1rem;
   }
-	
+
   .icon {
     color: #57565c;
     height: 1.3rem;
@@ -328,14 +344,14 @@ Form{
 }
 
 .btn.btn-primary-contact {
-  font-family: 'Quicksand', sans-serif;
-	font-weight: bold;
+  font-family: "Quicksand", sans-serif;
+  font-weight: bold;
   height: 2.5rem;
   line-height: 2.5rem;
   padding: 0 3rem;
   border: 0;
   border-radius: 3rem;
-  background-image:linear-gradient(131deg, #ffd340, #ff923c, #ff923c, #ff923c);
+  background-image: linear-gradient(131deg, #ffd340, #ff923c, #ff923c, #ff923c);
   background-size: 300% 100%;
   transition: all 0.3s ease-in-out;
 }
@@ -346,13 +362,169 @@ Form{
   transform: translateY(-0.15em);
 }
 
-
 /*! Dashboard*/
-.image-section{
+.image-section {
   position: relative;
 }
-.image-button{
+.image-button {
   position: absolute;
   margin-bottom: 13rem;
-  
+}
+
+/*! usermanagement*/
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.card-contact {
+  width: 600px;
+  height: 250px;
+  background-color: #fff;
+  background: linear-gradient(#f8f8f8, #fff);
+  box-shadow: 0 8px 16px -8px rgba(0, 0, 0, 0.4);
+  border-radius: 6px;
+  overflow: hidden;
+  position: relative;
+  margin: 1.5rem;
+}
+
+.card-contact h5 {
+  text-align: center;
+}
+.card-contact h1 {
+  text-align: center;
+}
+
+.card-contact .additional {
+  position: absolute;
+  width: 150px;
+  height: 100%;
+  background: linear-gradient(#6282eb, #cbd3ee);
+  transition: width 0.4s;
+  overflow: hidden;
+  z-index: 2;
+}
+
+.card-contact:hover .additional {
+  width: 100%;
+  border-radius: 0 5px 5px 0;
+}
+
+.card-contact .additional .user-card {
+  width: 150px;
+  height: 100%;
+  position: relative;
+  float: left;
+}
+
+.card-contact .additional .user-card::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 10%;
+  right: -2px;
+  height: 80%;
+  border-left: 2px solid rgba(0, 0, 0, 0.025);
+}
+
+.card-contact .additional .user-card .level,
+.card-contact .additional .user-card .points {
+  top: 15%;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 0.75em;
+  font-weight: bold;
+  background: rgba(0, 0, 0, 0.15);
+  padding: 0.125rem 0.75rem;
+  border-radius: 100px;
+  white-space: nowrap;
+}
+
+.card-contact .additional .user-card .points {
+  top: 85%;
+}
+
+.card-contact .additional .user-card svg {
+  top: 50%;
+}
+
+.card-contact .additional .more-info {
+  width: 300px;
+  float: left;
+  position: absolute;
+  left: 150px;
+  height: 100%;
+}
+
+.card-contact .additional .more-info h1 {
+  color: #fff;
+  margin-bottom: 0;
+}
+
+.card-contact .additional .coords {
+  margin: 0 1rem;
+  color: #fff;
+  font-size: 1rem;
+}
+
+.card-contact .additional .coords span + span {
+  float: right;
+}
+
+.card-contact .additional .stats {
+  font-size: 2rem;
+  display: flex;
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  right: 1rem;
+  top: auto;
+  color: #fff;
+}
+
+.card-contact .additional .stats > div {
+  flex: 1;
+  text-align: center;
+}
+
+.card-contact .additional .stats i {
+  display: block;
+}
+
+.card-contact .additional .stats div.title {
+  font-size: 0.75rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.card-contact .additional .stats div.value {
+  font-size: 1.5rem;
+  font-weight: bold;
+  line-height: 1.5rem;
+}
+
+.card-contact .additional .stats div.value.infinity {
+  font-size: 2.5rem;
+}
+
+.card-contact .general {
+  width: 400px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 1;
+  box-sizing: border-box;
+  padding: 1rem;
+  padding-top: 0;
+}
+
+.card-contact .general .more {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  font-size: 0.9em;
 }

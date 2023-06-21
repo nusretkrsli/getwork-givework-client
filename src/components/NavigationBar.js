@@ -12,8 +12,6 @@ import { UserContext } from '../contexts/UserContext';
 function NavigationBar() {
   const { isAuthenticated, isLoading } = useAuth0();
   const user = useContext(UserContext);
-  console.log(user?.user?.role);
-
   return (
     <>
       <Navbar className="navbar" bg="primary" variant="dark" expand="lg">
@@ -53,9 +51,11 @@ function NavigationBar() {
                     <Nav.Link as={NavLink} to="/dashboard">
                       Dashboard
                     </Nav.Link>
+                    {user?.user?.role!=="admin" &&(
                     <Nav.Link as={NavLink} to="/contact">
                       Contact
                     </Nav.Link>
+                    )}
                     {user?.user?.role === 'admin' && (
                       <Nav.Link as={NavLink} to="/usermanagement">
                         UserManagement
