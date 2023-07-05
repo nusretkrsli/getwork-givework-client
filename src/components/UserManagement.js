@@ -5,7 +5,7 @@ import { getMessages } from "../services/contactService";
 export default function UserManagement() {
   const [users, setUsers] = useState([]);
   const [messages, setMessages] = useState([]);
-
+ 
   const getAllUsers = async () => {
     try {
       const users = await userService.getUsers();
@@ -32,6 +32,7 @@ export default function UserManagement() {
     getAllUsersMessages();
   }, []);
 
+  
   const mergedArray = messages.map((message) => {
     const user = users.find((user) => user.id === message.UserId);
     if (user) {
@@ -40,8 +41,7 @@ export default function UserManagement() {
       return null;
     }
   });
-
-  console.log("Birleştirilmiş Array:", mergedArray);
+ 
 
   return (
     <div className="container mt-3">

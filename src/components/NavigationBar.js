@@ -58,7 +58,7 @@ function NavigationBar() {
                     )}
                     {user?.user?.role === 'admin' && (
                       <Nav.Link as={NavLink} to="/usermanagement">
-                        UserManagement
+                        UserManagement 
                       </Nav.Link>
                     )}
                   </>

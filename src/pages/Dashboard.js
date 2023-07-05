@@ -63,15 +63,15 @@ function Dashboard() {
         `/dashboard/image?email=${selectedMember[0]?.email}`,
         formData
       );
-
       getUserImage();
-      return response.data;
-    } catch (error) {
+      return response.data; 
+    } 
+    catch (error) {
       console.error(error);
       throw error;
     }
   };
-
+  
   const getUserImage = async () => {
     try {
       const response = await api.get(`/dashboard/image?email=${user?.email}`);
