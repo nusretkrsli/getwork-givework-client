@@ -1,13 +1,530 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-image: url("https://img.freepik.com/premium-photo/business-handshake-finance-prosperity-money-technology-asset-background_31965-43781.jpg?w=1060");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+/*! navbar */
+.logo {
+  width: 4rem;
+}
+
+/*! HomePage */
+.homepageimage {
+  height: 25rem;
+  width: 25rem;
+}
+
+.image_text {
+  color: #f2f2f2;
+  background: #77a9f3;
+  font-size: 38px;
+  line-height: 50px;
+  font-weight: 700;
+  margin: 0 5px 24px;
+  float: left;
+  padding: 10px;
+  margin: 2px 5px 24px;
+  -webkit-box-shadow: -19px -10px 40px 20px rgba(0, 0, 0, 0.88);
+  -moz-box-shadow: -19px -10px 40px 20px rgba(0, 0, 0, 0.88);
+  box-shadow: -19px -10px 40px 20px rgba(0, 0, 0, 0.88);
+  -webkit-border-radius: 10px;
+  -webkit-border-top-left-radius: 200px;
+  -webkit-border-bottom-right-radius: 200px;
+  -moz-border-radius: 10px;
+  -moz-border-radius-topleft: 250px;
+  -moz-border-radius-bottomright: 250px;
+  border-radius: 10px;
+  border-top-left-radius: 230px;
+  border-bottom-right-radius: 230px;
+}
+
+.register_text {
+  background-color: white;
+  -webkit-box-shadow: -6px 8px 75px -3px rgba(67, 73, 247, 1);
+  -moz-box-shadow: -6px 8px 75px -3px rgba(67, 73, 247, 1);
+  box-shadow: -6px 8px 75px -3px rgba(67, 73, 247, 1);
+}
+
+.wrap {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button {
+  min-width: 300px;
+  min-height: 60px;
+  font-size: 18px;
+  text-transform: uppercase;
+  letter-spacing: 1.3px;
+  font-weight: 700;
+  color: #313133;
+  background: #4b7fcc;
+  background: linear-gradient(
+    90deg,
+    rgb(129, 198, 230) 0%,
+    rgb(81, 79, 209) 100%
+  );
+  border: none;
+  border-radius: 1000px;
+  box-shadow: 12px 12px 24px rgba(79, 209, 197, 0.64);
+  transition: all 0.3s ease-in-out 0s;
+  cursor: pointer;
+  outline: none;
+  position: relative;
+  padding: 10px;
+}
+/*! Footer */
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  color: white;
+  text-align: center;
+}
+
+/*! About Me */
+
+.about_me {
+  margin: 0;
+  padding: 0;
+  background-image: url("https://png.pngtree.com/thumb_back/fh260/background/20201026/pngtree-futuristic-shape-abstract-background-chemistry-technology-concept-for-website-image_438818.jpg");
+
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  min-height: 88vh;
+}
+
+.profil_image {
+  width: 18rem;
+  height: 20rem;
+  border: solid 5px white;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+}
+.text_content {
+  border: solid 5px white;
+  box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+}
+
+/*! welcomePage */
+.form-control {
+  background-color: #b1caee;
+  color: white;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.card-body {
+  background-color: #b1caee;
+  color: white;
+}
+
+/*! sidebar */
+
+.selected_button {
+  width: 18rem;
+  appearance: none;
+  background-color: #ffffff;
+  border-radius: 40em;
+  border-style: none;
+  box-shadow: #adcfff 0 -12px 6px inset;
+  box-sizing: border-box;
+  color: #000000;
+  cursor: pointer;
+  display: inline-block;
+  font-family: -apple-system, sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: -0.24px;
+  margin: 0;
+  outline: none;
+  padding: 1rem 1.3rem;
+  quotes: auto;
+  text-align: center;
+  text-decoration: none;
+  transition: all 0.15s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.selected_button:hover {
+  background-color: #0d6efd;
+  box-shadow: #0d6efd 0 -6px 8px inset;
+  transform: scale(1.125);
+  color: white;
+}
+
+.selected_button:active {
+  transform: scale(1.025);
+}
+
+@media (min-width: 768px) {
+  .selected_button {
+    font-size: 1.5rem;
+    padding: 0.75rem 2rem;
+  }
+}
+
+/*! UPDATEFORM */
+
+.update_form {
+  width: 25rem;
+  height: 35px;
+  margin-top: 3px;
+  margin-bottom: 3px;
+  background-color: #b1caee;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+}
+
+.update_label {
+  font-size: large;
+  font-weight: bold;
+}
+
+/*! workerPage */
+
+.profil-card {
+  width: 18rem;
+  box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+}
+
+#boot-icon {
+  font-size: 3rem;
+  color: rgb(0, 128, 55);
+  opacity: 0.9;
+  -webkit-text-stroke-width: 1.3px;
+  text-shadow: rgb(0, 255, 136) 0px 4.4px 4.1px;
+}
+
+.invisible-button {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  outline: none;
+}
+
+/*! Contact*/
+
+svg {
+  height: 23rem;
+  margin-right: 4rem;
+}
+
+#envelope {
+  animation: float 2s ease-in-out infinite;
+}
+
+#star1,
+#star2,
+#star3,
+#star4,
+#star5,
+#star6 {
+  animation: blink 1s ease-in-out infinite;
+}
+#star2 {
+  animation-delay: 100ms;
+}
+#star3 {
+  animation-delay: 500ms;
+}
+#star4 {
+  animation-delay: 700ms;
+}
+#star5 {
+  animation-delay: 300ms;
+}
+#star6 {
+  animation-delay: 200ms;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.container-contact {
+  height: 80vh;
+}
+
+Form {
+  min-width: 25rem;
+
+  .title {
+    font-family: "Pacifico", cursive;
+    color: #212529;
+    font-size: 2.5rem;
+  }
+
+  .form-group-contact {
+    background-color: #f2f6f8;
+    border-radius: 2rem;
+    border: none;
+    box-shadow: 0px 7px 5px rgba(0, 0, 0, 0.11);
+
+    &.thick {
+      height: 3.3rem;
+      padding: 0.5rem 3.5rem;
+    }
+
+    &:focus {
+      background-color: #f2f6f8;
+      border: none;
+      box-shadow: 0px 7px 5px rgba(0, 0, 0, 0.11);
+    }
+  }
+
+  .message .form-control {
+    padding: 0.5rem 1.8rem;
+  }
+
+  ::placeholder {
+    font-family: "Quicksand", sans-serif;
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: #838788;
+    position: relative;
+    left: 0;
+  }
+
+  Field,
+  textarea {
+    font-family: "Quicksand", sans-serif;
+    color: #212529;
+    font-size: 1.1rem;
+  }
+
+  .icon {
+    color: #57565c;
+    height: 1.3rem;
+    position: absolute;
+    left: 1.5rem;
+    top: 1.1rem;
+  }
+}
+
+.btn.btn-primary-contact {
+  font-family: "Quicksand", sans-serif;
+  font-weight: bold;
+  height: 2.5rem;
+  line-height: 2.5rem;
+  padding: 0 3rem;
+  border: 0;
+  border-radius: 3rem;
+  background-image: linear-gradient(131deg, #ffd340, #ff923c, #ff923c, #ff923c);
+  background-size: 300% 100%;
+  transition: all 0.3s ease-in-out;
+}
+
+.btn.btn-primary-contact:hover:enabled {
+  box-shadow: 0 0.5em 0.5em -0.4em #ff923cba;
+  background-size: 100% 100%;
+  transform: translateY(-0.15em);
+}
+
+/*! Dashboard*/
+.image-section {
+  position: relative;
+}
+.image-button {
+  position: absolute;
+  margin-bottom: 13rem;
+}
+
+/*! usermanagement*/
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.card-contact {
+  width: 600px;
+  height: 250px;
+  background-color: #fff;
+  background: linear-gradient(#f8f8f8, #fff);
+  box-shadow: 0 8px 16px -8px rgba(0, 0, 0, 0.4);
+  border-radius: 6px;
+  overflow: hidden;
+  position: relative;
+  margin: 1.5rem;
+}
+
+.card-contact h5 {
+  text-align: center;
+}
+.card-contact h1 {
+  text-align: center;
+}
+
+.card-contact .additional {
+  position: absolute;
+  width: 150px;
+  height: 100%;
+  background: linear-gradient(#6282eb, #cbd3ee);
+  transition: width 0.4s;
+  overflow: hidden;
+  z-index: 2;
+}
+
+.card-contact:hover .additional {
+  width: 100%;
+  border-radius: 0 5px 5px 0;
+}
+
+.card-contact .additional .user-card {
+  width: 150px;
+  height: 100%;
+  position: relative;
+  float: left;
+}
+
+.card-contact .additional .user-card::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 10%;
+  right: -2px;
+  height: 80%;
+  border-left: 2px solid rgba(0, 0, 0, 0.025);
+}
+
+.card-contact .additional .user-card .level,
+.card-contact .additional .user-card .points {
+  top: 15%;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 0.75em;
+  font-weight: bold;
+  background: rgba(0, 0, 0, 0.15);
+  padding: 0.125rem 0.75rem;
+  border-radius: 100px;
+  white-space: nowrap;
+}
+
+.card-contact .additional .user-card .points {
+  top: 85%;
+}
+
+.card-contact .additional .user-card svg {
+  top: 50%;
+}
+
+.card-contact .additional .more-info {
+  width: 300px;
+  float: left;
+  position: absolute;
+  left: 150px;
+  height: 100%;
+}
+
+.card-contact .additional .more-info h1 {
+  color: #fff;
+  margin-bottom: 0;
+}
+
+.card-contact .additional .coords {
+  margin: 0 1rem;
+  color: #fff;
+  font-size: 1rem;
+}
+
+.card-contact .additional .coords span + span {
+  float: right;
+}
+
+.card-contact .additional .stats {
+  font-size: 2rem;
+  display: flex;
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  right: 1rem;
+  top: auto;
+  color: #fff;
+}
+
+.card-contact .additional .stats > div {
+  flex: 1;
+  text-align: center;
+}
+
+.card-contact .additional .stats i {
+  display: block;
+}
+
+.card-contact .additional .stats div.title {
+  font-size: 0.75rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.card-contact .additional .stats div.value {
+  font-size: 1.5rem;
+  font-weight: bold;
+  line-height: 1.5rem;
+}
+
+.card-contact .additional .stats div.value.infinity {
+  font-size: 2.5rem;
+}
+
+.card-contact .general {
+  width: 400px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 1;
+  box-sizing: border-box;
+  padding: 1rem;
+  padding-top: 0;
+}
+
+.card-contact .general .more {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  font-size: 0.9em;
 }
